@@ -1,0 +1,28 @@
+{
+  "name": "documents_widget",
+  "version": "1.0.0",
+  "description": "Виджет для вывода документов",
+  "main": "index.js",
+  "author": "Ignat Medvedskiy <mr.shrp@yandex.ru>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^4.3.0",
+    "prettier": "^2.0.5",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
