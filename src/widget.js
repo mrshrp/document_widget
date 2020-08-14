@@ -1,4 +1,4 @@
-window.documetnWidget = (function () {
+const documentWidget = (function () {
   'use strict';
   var config = {
     URL: '/test.json',
@@ -63,28 +63,26 @@ window.documetnWidget = (function () {
     }
   };
 
-  const generateItemLink = (element, row) => {
+  const generateItem = (element, row) => {
     let linkElement;
-    let linkElements = element.getElementsByTagName('a');
-    if (linkElements.length == 0) {
+    let childrenElements = element.children;
+    if (childrenElements.length == 0) {
       linkElement = document.createElement('a');
       linkElement.innerText = row.NAME;
       linkElement.href = row.LINK;
+      addClassNames(linkElement, config.linkItemClass);
+      element.appendChild(linkElement);
     } else {
-      linkElement = linkElements[0];
-      linkElement.href = row.LINK;
-      Object.keys(row).forEach((key) => {
-        foreachElement(
-          '[data-param_name="' + key + '"]',
-          (paramElement) => {
-            paramElement.innerText = row[key];
-          },
-          linkElement
-        );
+      element.querySelectorAll('*').forEach((el) => {
+        if (el.tagName === 'A') {
+          el.href = row.LINK;
+        }
+        Object.keys(row).forEach((key) => {
+          if (el.getAttribute('data-param_name') === key)
+            el.innerText = row[key];
+        });
       });
     }
-    addClassNames(linkElement, config.linkItemClass);
-    element.appendChild(linkElement);
     return element;
   };
 
@@ -113,7 +111,7 @@ window.documetnWidget = (function () {
         if (typeof config.onBeforeItemAdd === 'function') {
           config.onBeforeItemAdd(i, type, data);
         }
-        let elem = generateItemLink(documentBlock.cloneNode(true), data);
+        let elem = generateItem(documentBlock.cloneNode(true), data);
         elem.setAttribute('data-key', i);
         elementBlock.appendChild(elem);
         if (typeof config.onAfterItemAdd === 'function') {
@@ -140,3 +138,6 @@ window.documetnWidget = (function () {
     load: load,
   };
 })();
+
+window.documentWidget = documentWidget;
+module.exports = documentWidget;
