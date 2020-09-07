@@ -1,5 +1,5 @@
 documentWidget.load({
-  companyDirectory: 'naftatrans',
+  companyDirectory: 'lambumiz',
 });
 
 // documentWidget.load({
