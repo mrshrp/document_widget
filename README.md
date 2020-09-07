@@ -1,5 +1,17 @@
 # Виджет для вывода документом inform.uscapital
 
+### Подкулючение
+
+`<script src="http://inform.uscapital.ru/widget.js"></script>`
+
+```
+documentWidget.load({
+  companyDirectory: '{Название дериктории компании}',
+});
+```
+
+Список доступных компаний и типов документом можно попсмотреть на [inform.uscapital.ru](http://inform.uscapital.ru)
+
 ### Пример основной структуры параметров JSON документа
 
 ```
@@ -27,7 +39,7 @@
 </div>
 ```
 
-Класс `document-widget_block` является основным для вывода инфромации. В нем скрипт ишет блок с классом `document-widget_wrapper`. В нем задает data атрибут `data-documetn_type` и вписываем желаемый тип (тип можно взять из json файла или на [info.uscapital.ru](http://info.uscapital.ru)).
+Класс `document-widget_block` является основным для вывода инфромации. В нем скрипт ишет блок с классом `document-widget_wrapper`. В нем задает data атрибут `data-documetn_type` и вписываем желаемый тип (тип можно взять из json файла или на [inform.uscapital.ru](http://inform.uscapital.ru)).
 Далее скрип ищет блок с классом `document-widget_item`. На основе него формируются блоки для вывода информации из json.
 
 #### Если в блоке `document-widget_item` нет контента.
