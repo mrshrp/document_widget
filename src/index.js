@@ -1,16 +1,22 @@
+documentWidget.load({
+  companyDirectory: 'naftatrans',
+});
 // documentWidget.load({
+//   companyDirectory: 'naftatrans',
+//   linkItemClass: ['help', 'testClass'],
 //   onStart: () => {
-//     console.log('Start Script');
+//     // console.log('Start Script');
 //   },
 //   onEnd: () => {
-//     console.log('End Script');
+//     // console.log('End Script');
 //   },
 //   onBeforeItemAdd: (...args) => {
-//     console.log(args);
+//     // console.log('onBeforeItemAdd', args);
 //   },
 //   onAfterItemAdd: (...args) => {
-//     console.log(args);
+//     // console.log('onAfterItemAdd', args);
+//     // args[0].getElementsByTagName('a')[0].style.color = 'red';
 //   },
 // });
 
-documentWidget.load();
+// documentWidget.load();

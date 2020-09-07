@@ -1,15 +1,21 @@
 const documentWidget = (function () {
   'use strict';
   var config = {
-    URL: '/test.json',
+    mainURL: 'http://inform.uscapital.ru',
+    companyDirectory: '',
     wrapperItemsClass: '.document-widget_wrapper',
     itemBlockClass: '.document-widget_item',
-    linkItemClass: ['hellp'],
+    linkItemClass: null,
     dataType: 'data-documetn_type',
+    dataParametr: 'data-param',
     onBeforeItemAdd: null,
     onAfterItemAdd: null,
     onStart: null,
     onEnd: null,
+  };
+
+  const generateUrl = () => {
+    return `${config.mainURL}/${config.companyDirectory}/json_js.json`;
   };
 
   const loadParams = (mainConfig, params) => {
@@ -41,7 +47,7 @@ const documentWidget = (function () {
       var json = function (response) {
         return response.json();
       };
-      fetch(config.URL, options)
+      fetch(generateUrl(), options)
         .then(status)
         .then(json)
         .then(function (data) {
@@ -54,6 +60,7 @@ const documentWidget = (function () {
   };
 
   const addClassNames = (element, classNames) => {
+    if (classNames === null || classNames === undefined) return;
     if (Array.isArray(classNames)) {
       for (let itemClass of classNames) {
         element.classList.add(itemClass);
@@ -68,17 +75,17 @@ const documentWidget = (function () {
     let childrenElements = element.children;
     if (childrenElements.length == 0) {
       linkElement = document.createElement('a');
-      linkElement.innerText = row.NAME;
-      linkElement.href = row.LINK;
+      linkElement.innerText = row['ORIGIN'];
+      linkElement.href = `${config.mainURL}/${row['PATH']}`;
       addClassNames(linkElement, config.linkItemClass);
       element.appendChild(linkElement);
     } else {
       element.querySelectorAll('*').forEach((el) => {
         if (el.tagName === 'A') {
-          el.href = row.LINK;
+          el.href = `${config.mainURL}/${row['PATH']}`;
         }
         Object.keys(row).forEach((key) => {
-          if (el.getAttribute('data-param_name') === key)
+          if (el.getAttribute(config.dataParametr) === key)
             el.innerText = row[key];
         });
       });
@@ -115,7 +122,7 @@ const documentWidget = (function () {
         elem.setAttribute('data-key', i);
         elementBlock.appendChild(elem);
         if (typeof config.onAfterItemAdd === 'function') {
-          config.onAfterItemAdd(elem, elementBlock, i, type, data);
+          config.onAfterItemAdd(i, elem, elementBlock, type, data);
         }
       });
   };
