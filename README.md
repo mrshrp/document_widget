@@ -36,6 +36,10 @@ documentWidget.load({
       </a>
     </div>
   </div>
+  <div class="document-widget_wrapper" data-document_type="otczetnost">
+    <div class="document-widget_item">
+    </div>
+  </div>
 </div>
 ```
 
