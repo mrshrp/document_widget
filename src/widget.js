@@ -6,7 +6,7 @@ const documentWidget = (function () {
     wrapperItemsClass: '.document-widget_wrapper',
     itemBlockClass: '.document-widget_item',
     linkItemClass: null,
-    dataType: 'data-documetn_type',
+    dataType: 'data-document_type',
     dataParametr: 'data-param',
     onBeforeItemAdd: null,
     onAfterItemAdd: null,
