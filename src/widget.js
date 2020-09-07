@@ -129,6 +129,12 @@ const documentWidget = (function () {
 
   const load = (params) => {
     config = loadParams(config, params);
+    if (
+      config.companyDirectory === null ||
+      config.companyDirectory == undefined ||
+      config.companyDirectory.length === 0
+    )
+      throw 'Не выбрана компания';
     if (typeof config.onStart === 'function') {
       config.onStart();
     }
