@@ -43,7 +43,7 @@ documentWidget.load({
 </div>
 ```
 
-Класс `document-widget_block` является основным для вывода инфромации. В нем скрипт ишет блок с классом `document-widget_wrapper`. В нем задает data атрибут `data-document_type` и вписываем желаемый тип (тип можно взять из json файла или на [inform.uscapital.ru](http://inform.uscapital.ru)).
+Класс `document-widget_block` является основным для вывода инфромации. В нем скрипт ишет блок с классом `document-widget_wrapper`. В нем задаем data атрибут `data-document_type` и вписываем желаемый тип (тип можно взять из json файла или на [inform.uscapital.ru](http://inform.uscapital.ru)).
 Далее скрип ищет блок с классом `document-widget_item`. На основе него формируются блоки для вывода информации из json.
 
 #### Если в блоке `document-widget_item` нет контента.
