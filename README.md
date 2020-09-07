@@ -48,7 +48,7 @@ documentWidget.load({
 
 #### Если в блоке `document-widget_item` нет контента.
 
-В этом случае скрипт создат стандартную структуру `<a href="{PATH}">{ORIGIN}</a>`
+В этом случае скрипт создаcт стандартный элемент `<a href="{PATH}">{ORIGIN}</a>`
 
 #### Если в блоке `document-widget_item` есть контента.
 
