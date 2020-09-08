@@ -13,7 +13,7 @@ const documentWidget = (function () {
     onStart: null,
     onEnd: null,
   };
-
+  //TODO: Добавить количество выводимых документов в тип
   const generateUrl = () => {
     return `${config.mainURL}/${config.companyDirectory}/json_js.json`;
   };
