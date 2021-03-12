@@ -2,8 +2,7 @@
 
 ### Подкулючение
 
-`<script src="http://inform.uscapital.ru/widget.js"></script>`
-
+`<script src="https://inform.uscapital.ru/widget.js"></script>`
 ```
 documentWidget.load({
   companyDirectory: '{Название дериктории компании}',
