@@ -9,7 +9,7 @@ documentWidget.load({
 });
 ```
 
-Список доступных компаний и типов документом можно попсмотреть на [inform.uscapital.ru](http://inform.uscapital.ru)
+Список доступных компаний и типов документом можно попсмотреть на [inform.uscapital.ru](https://inform.uscapital.ru)
 
 ### Пример основной структуры параметров JSON документа
 
